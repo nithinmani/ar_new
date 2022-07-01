@@ -92,8 +92,9 @@ class ScreenSignup extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(30)),
                             ),
                             onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (ctx) => ScreenHome()));
+                              Navigator.of(context).pushReplacement(
+                                  MaterialPageRoute(
+                                      builder: (ctx) => ScreenHome()));
                             },
                             child: Text('Sign Up'),
                           ),

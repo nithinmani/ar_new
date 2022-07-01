@@ -31,7 +31,7 @@ class ScreenCover extends StatelessWidget {
                   height: 40,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).push(
+                      Navigator.of(context).pushReplacement(
                           MaterialPageRoute(builder: (ctx) => ScreenSignup()));
                     },
                     style: ElevatedButton.styleFrom(

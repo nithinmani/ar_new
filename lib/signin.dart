@@ -120,7 +120,8 @@ class ScreenLogin extends StatelessWidget {
     final _username = _usernameController.text;
     final _password = _passwordController.text;
     if (_username == _password) {
-      Navigator.of(ctx).push(MaterialPageRoute(builder: (ctx) => ScreenHome()));
+      Navigator.of(ctx)
+          .pushReplacement(MaterialPageRoute(builder: (ctx) => ScreenHome()));
     } else {
       ScaffoldMessenger.of(ctx).showSnackBar(SnackBar(
           behavior: SnackBarBehavior.floating,
