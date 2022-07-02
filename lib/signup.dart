@@ -38,12 +38,33 @@ class ScreenSignup extends StatelessWidget {
                     child: ListView(
                       shrinkWrap: true,
                       children: [
-                        const Align(
+                        Align(
                             alignment: Alignment.topLeft,
-                            child: Text(
-                              'Sign Up',
-                              style: TextStyle(
-                                  fontSize: 30, fontWeight: FontWeight.bold),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Sign Up',
+                                  style: TextStyle(
+                                      fontSize: 40,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                TextButton(
+                                    style: TextButton.styleFrom(
+                                      primary: Colors.black38,
+                                    ),
+                                    onPressed: () {
+                                      Navigator.of(context).pushReplacement(
+                                          MaterialPageRoute(
+                                              builder: (ctx) => ScreenLogin()));
+                                    },
+                                    child: Text(
+                                      'Sign In',
+                                      style: TextStyle(
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.bold),
+                                    ))
+                              ],
                             )),
                         const SizedBox(
                           height: 35,
@@ -107,17 +128,6 @@ class ScreenSignup extends StatelessWidget {
                           height: 8,
                         ),
                         SignInButton(Buttons.Email, onPressed: () {}),
-                        Row(
-                          children: [
-                            Text('Already have an account?'),
-                            TextButton(
-                                onPressed: () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (ctx) => ScreenLogin()));
-                                },
-                                child: Text('Sign In'))
-                          ],
-                        )
                       ],
                     )),
               ),
